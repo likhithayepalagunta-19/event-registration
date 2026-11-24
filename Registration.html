@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Registration Form</title>
+  <style>
+body{
+font-family:Arial;
+background:#f2f2f2;
+}
+form{
+width:350px;
+margin:auto;
+padding:20px;
+background:white;
+border-radius:8px;
+}
+button{
+background:blue;
+color:white;
+border:8px;
+}
+h2{
+text-align:center;
+}
+#onsubmission{
+color:green;
+}
+  </style>
+ </head>
+ <body>
+<h2> Registration Form</h2>
+ <form id="regform" onsubmit="register(event)">
+ First Name:<input type="text" id="firstName" required><br><br>
+ Last Name:<input type="text" id="lastName" required><br><br>
+ Email:<input type="email" id="email" required><br><br>
+Phone Number:<input type="tel" id="phone" pattern="[0-9]{10}" required><br><br>
+ DOB:<input type="date" id="dob" required><br><br>
+ Gender:
+ <input type="radio" name="gender" value="female" required>Female
+ <input type="radio" name="gender" value="male">Male<br><br>
+Branch:
+<select id="branch">
+<option value="CSE">CSE</option><br>
+<option value="ECE">ECE</option><br>
+<option value="IT">IT</option><br>
+</select>
+<br><br>
+
+Address:<textarea id="address" required></textarea><br><br>
+<input type="checkbox" id="terms" required>Accept the terms<br><br>
+
+<button type="submit">Submit</button>
+<button type="reset">Reset</button>
+<p id="onsubmission" hidden>Thank you for registering</p>
+
+</form>
+ <script>
+function register(event){
+event.preventDefault();
+document.getElementById("regform").reset();
+document.getElementById("onsubmission").hidden=false;
+}
+</script>
+
+</body>
+</html>
